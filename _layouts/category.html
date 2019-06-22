@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="home">
+
+    &#123;&#123; content &#125;&#125;
+
+    <h2>About "&#123;&#123;page.category&#125;&#125;"</h2>
+
+    <ul class="post-list">
+        &lcur;% for post in site.categories.&lbra;page.category] %&#125;
+        <li>
+            <a href=""><span class="post-title">&#123;&#123; post.title | escape &#125;&#125;</span><br/>
+                <span class="post-meta">&#123;&#123; post.date | date: "%Y-%b-%-d" &#125;&#125; | &#123;&#123; post.categories | array_to_sentence_string &#125;&#125;</span>
+            </a>
+        </li>
+        &#123;% endfor %&#125;
+    </ul>
+</div>
